@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BC-Prototype-1</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Keepbird">จับนก</string>
+    <string name="SearchPostion">ค้นหาตำแหน่งของนก</string>
+    <string name="BirdsData">ข้อมูลนก</string>
+    <string name="collection">นกสะสม</string>
+    <string name="TakePhoto">ถ่ายภาพนก</string>
+    <string name="KeepVirtualBirds">จับนกเสมือน</string>
+    <string name="BirdPhoto">ภาพถ่ายนก</string>
+    <string name="VirtualBird">นกเสมือน</string>
+    <string name="title_activity_keepbird">KeepbirdActivity</string>
+    <string name="title_activity_collection">Collection</string>
+    <string name="title_activity_birds_data">BirdsDataActivity</string>
+    <color name="blue1">#2196F3</color>
+    <color name="blue2">#448AFF</color>
+    <string name="title_activity_bird_map_actitvity">BirdMapActitvity</string>
+    <string name="title_activity_map_actitvity">Birds Collection</string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>
