@@ -2,6 +2,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.wattana.bc_prototype_1.KeepbirdActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/menu"
+        android:orderInCategory="100"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/menu_map"
+                android:title="@string/SearchPostion"
+                >
+            </item>
+            <item
+                android:id="@+id/menu_birddata"
+                android:title="@string/BirdsData"
+                >
+            </item>
+
+            <item
+                 android:id="@+id/menu_collection"
+                android:title="@string/collection"
+        >
+            </item>
+
+        </menu>
+
+
+    </item>
 </menu>
