@@ -6,6 +6,7 @@
         android:id="@+id/action_settings"
         android:title="@string/menu"
         android:orderInCategory="100"
+        android:icon="@drawable/ic_drawer"
         app:showAsAction="never">
         <menu>
             <item

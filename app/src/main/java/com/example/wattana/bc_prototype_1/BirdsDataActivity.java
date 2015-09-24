@@ -1,5 +1,6 @@
 package com.example.wattana.bc_prototype_1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,8 +29,20 @@ public class BirdsDataActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_birdcollection) {
+            Intent birdcollect = new Intent(this,CollectionActivity.class);
+
+            startActivity(birdcollect);
+
             return true;
+        }else if (id == R.id.menu_keep){
+            Intent keepbird = new Intent(this,KeepbirdActivity.class);
+
+            startActivity(keepbird);
+        }else if (id == R.id.menu_map){
+            Intent map = new Intent(this,MapsActivity.class);
+
+            startActivity(map);
         }
 
         return super.onOptionsItemSelected(item);
