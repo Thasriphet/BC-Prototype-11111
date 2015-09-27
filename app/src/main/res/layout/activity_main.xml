@@ -11,52 +11,48 @@
         android:text="@string/Keepbird"
         android:id="@+id/btnKeepbird"
         android:singleLine="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="10dp"
         android:onClick="keepBirds"
         android:nestedScrollingEnabled="true"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_above="@+id/btnSearchpossition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/SearchPostion"
         android:id="@+id/btnSearchpossition"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@+id/btnKeepbird"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:textStyle="bold"
         android:textSize="25sp"
         android:onClick="openMap"
-        android:nestedScrollingEnabled="true" />
+        android:nestedScrollingEnabled="true"
+        android:layout_above="@+id/btnBirdData"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/BirdsData"
         android:id="@+id/btnBirdData"
-        android:layout_below="@+id/btnSearchpossition"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentStart="true"
         android:onClick="birdData"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_above="@+id/btnCollection"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/collection"
         android:id="@+id/btnCollection"
-        android:layout_below="@+id/btnBirdData"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="3dp"
         android:onClick="collection"
         android:textStyle="bold"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
