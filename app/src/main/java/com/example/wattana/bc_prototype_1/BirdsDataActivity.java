@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class BirdsDataActivity extends AppCompatActivity {
 
@@ -20,6 +21,36 @@ public class BirdsDataActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_birds_data, menu);
         return true;
     }
+    public  void keepbird (View view){
+        Intent itn1 = new Intent(this,KeepbirdActivity.class);
+
+        startActivity(itn1);
+    }
+    public  void  birdData (View view){
+        Intent itn2 = new Intent(this,BirdsDataActivity.class);
+
+        startActivity(itn2);
+    }
+    public  void  birdcollection (View view){
+        Intent itn3 = new Intent(this,CollectionActivity.class);
+
+        startActivity(itn3);
+    }
+    public  void  openposition (View view){
+        Intent itn4 = new Intent(this,MapsActivity.class);
+
+        startActivity(itn4);
+    }
+
+
+
+    /*-------*/
+    public void gotobird (View view){
+        Intent itn5 = new Intent(this,DetailActivity.class);
+
+        startActivity(itn5);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -28,22 +59,7 @@ public class BirdsDataActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.menu_birdcollection) {
-            Intent birdcollect = new Intent(this,CollectionActivity.class);
 
-            startActivity(birdcollect);
-
-            return true;
-        }else if (id == R.id.menu_keep){
-            Intent keepbird = new Intent(this,KeepbirdActivity.class);
-
-            startActivity(keepbird);
-        }else if (id == R.id.menu_map){
-            Intent map = new Intent(this,MapsActivity.class);
-
-            startActivity(map);
-        }
 
         return super.onOptionsItemSelected(item);
     }

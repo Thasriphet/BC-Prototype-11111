@@ -6,5 +6,6 @@
     android:layout_height="match_parent"
     android:id="@+id/map"
     tools:context="com.example.wattana.bc_prototype_1.MapsActivity"
-    android:name="com.google.android.gms.maps.SupportMapFragment" />
+    class="com.google.android.gms.maps.SupportMapFragment"
+    /><!--android:name="com.google.android.gms.maps.SupportMapFragment"-->
 

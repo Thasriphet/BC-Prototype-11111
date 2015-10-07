@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class KeepbirdActivity extends AppCompatActivity {
 
@@ -20,7 +21,26 @@ public class KeepbirdActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_keepbird, menu);
         return true;
     }
+    public  void keepbird (View view){
+        Intent itn = new Intent(this,KeepbirdActivity.class);
 
+        startActivity(itn);
+    }
+    public  void  birddata (View view){
+        Intent itn = new Intent(this,BirdsDataActivity.class);
+
+        startActivity(itn);
+    }
+    public  void  birdcollection (View view){
+        Intent itn = new Intent(this,CollectionActivity.class);
+
+        startActivity(itn);
+    }
+    public  void  openposition (View view){
+        Intent itn = new Intent(this,MapsActivity.class);
+
+        startActivity(itn);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

@@ -1,30 +1,77 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.wattana.bc_prototype_1.KeepbirdActivity">
+    tools:context="com.example.wattana.bc_prototype_1.KeepbirdActivity"
+    android:background="@drawable/bg_ui00">
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="220dp"
         android:layout_height="80dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/TakePhoto"
+
         android:id="@+id/btnTakePhoto"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:background="@drawable/btn_takephoto"
+        android:layout_above="@+id/btnKeepvirtualBird"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+
+        android:id="@+id/btnKeepvirtualBird"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:background="@drawable/btn_keepvirtualbird"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/btnTakePhoto"
+        android:layout_alignStart="@+id/btnTakePhoto" />
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textSize="25sp" />
+        android:background="@drawable/bn_keep"
+        android:contentDescription="keepbanner" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/KeepVirtualBirds"
-        android:id="@+id/btnKeepvirtualBird"
-        android:layout_below="@+id/btnTakePhoto"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="2dp"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="10dp">
+
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="77dp"
+            android:text=""
+            android:id="@+id/btn_iconkeep"
+            android:background="@drawable/cyclemap"
+            android:layout_marginLeft="20dp"
+            android:onClick="openposition" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="77dp"
+            android:id="@+id/btn_iconpos"
+            android:background="@drawable/cycledata"
+            android:layout_marginLeft="20dp"
+            android:nestedScrollingEnabled="false"
+            android:onClick="birddata" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="77dp"
+            android:id="@+id/btn_icondata"
+            android:background="@drawable/cyclebag"
+            android:paddingLeft="5dp"
+            android:layout_marginLeft="20dp"
+            android:onClick="birdcollection" />
+    </LinearLayout>
 </RelativeLayout>

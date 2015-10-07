@@ -20,10 +20,12 @@
     <string name="title_activity_map_actitvity">Birds Collection</string>
     <string name="title_activity_maps">Map</string>
     <string name="menu">เมนู</string>
-
-
-
-    
+    <string name="app_newname">ชุมชนคนรักนก</string>
+    <string name="xv">aerfsad</string>
+    <string name="title_activity_data">DataActivity</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_virtual_bird">VirtualBirdActivity</string>
+    <string name="title_activity_photo">PhotoActivity</string>
 
 
 </resources>

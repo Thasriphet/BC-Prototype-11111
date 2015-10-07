@@ -2,18 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wattana.bc_prototype_1" >
 
-    <permission android:name="package.name.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+    <permission
+        android:name="package.name.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
 
-    <uses-feature android:name="package.name.permission.MAPS_RECEIVE"/>
+    <uses-feature android:name="package.name.permission.MAPS_RECEIVE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
 
     <uses-library android:name="com.google.android.maps" />
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -23,11 +27,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:label="@string/app_newname"
+        android:theme="@style/Theme.AppCompat.NoActionBar" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_newname" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -71,26 +75,38 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" >
         </activity>
-        <!--<activity-->
-            <!--android:name=".Collections"-->
-            <!--android:label="@string/title_activity_collections"-->
-            <!--android:parentActivityName=".MainActivity" >-->
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value="com.example.wattana.bc_prototype_1.MainActivity" />-->
-        <!--</activity>-->
-        <!--<activity-->
-            <!--android:name=".Main2Activity"-->
-            <!--android:label="@string/title_activity_main2" >-->
-        <!--</activity>-->
-        <!--<activity-->
-            <!--android:name=".birdcollectionActivity"-->
-            <!--android:label="@string/title_activity_birdcollection"-->
-            <!--android:parentActivityName=".MainActivity" >-->
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value="com.example.wattana.bc_prototype_1.MainActivity" />-->
-        <!--</activity>-->
+        <!-- <activity -->
+        <!-- android:name=".Collections" -->
+        <!-- android:label="@string/title_activity_collections" -->
+        <!-- android:parentActivityName=".MainActivity" > -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value="com.example.wattana.bc_prototype_1.MainActivity" /> -->
+        <!-- </activity> -->
+        <!-- <activity -->
+        <!-- android:name=".Main2Activity" -->
+        <!-- android:label="@string/title_activity_main2" > -->
+        <!-- </activity> -->
+        <!-- <activity -->
+        <!-- android:name=".birdcollectionActivity" -->
+        <!-- android:label="@string/title_activity_birdcollection" -->
+        <!-- android:parentActivityName=".MainActivity" > -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value="com.example.wattana.bc_prototype_1.MainActivity" /> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail" >
+        </activity>
+        <activity
+            android:name=".VirtualBirdActivity"
+            android:label="@string/title_activity_virtual_bird" >
+        </activity>
+        <activity
+            android:name=".PhotoActivity"
+            android:label="@string/title_activity_photo" >
+        </activity>
     </application>
 
 </manifest>
