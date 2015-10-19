@@ -60,13 +60,13 @@ public class MapsActivity extends FragmentActivity {
 
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(16.473986, 102.823689))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdicon_48)).title(""));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1)).title(""));
         mMap.addMarker(new MarkerOptions().position(new LatLng(16.444075, 102.813776))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdblueicon_48)).title("")); //บึงสี่ฐาน
-        mMap.addMarker(new MarkerOptions().position(new LatLng(16.444204, 102.814561))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdgreenicon_48)).title("")); //บึงสี่ฐาน 2
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1)).title("")); //บึงสี่ฐาน
+        /*mMap.addMarker(new MarkerOptions().position(new LatLng(16.444204, 102.814561))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdgreenicon_48)).title("")); //บึงสี่ฐาน 2*/
         mMap.addMarker(new MarkerOptions().position(new LatLng(16.473204, 102.814097))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdredicon_48)).title("")); //แปลงฝึกงาน คณะเกษตรศาสตร์
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1)).title("")); //แปลงฝึกงาน คณะเกษตรศาสตร์
         mMap.setMyLocationEnabled(true);
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -94,7 +94,7 @@ public class MapsActivity extends FragmentActivity {
         double longitude = myLocation.getLongitude();
 
         LatLng myCoordinates = new LatLng(latitude, longitude);
-        CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(myCoordinates, 13);
+        CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(myCoordinates, 15);
         mMap.animateCamera(yourLocation);
 
         // Create a LatLng object for the current location
