@@ -16,7 +16,7 @@
         android:nestedScrollingEnabled="true"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:background="@drawable/btn_keepbird"
+        android:background="@drawable/buttonkeepbird3d"
         android:layout_above="@+id/btnSearchpossition"
         android:layout_centerHorizontal="true" />
 
@@ -29,7 +29,7 @@
         android:textSize="25sp"
         android:onClick="openMap"
         android:nestedScrollingEnabled="true"
-        android:background="@drawable/btn_position"
+        android:background="@drawable/buttonposition3d"
         android:layout_above="@+id/btnBirdData"
         android:layout_alignLeft="@+id/btnKeepbird"
         android:layout_alignStart="@+id/btnKeepbird" />
@@ -42,7 +42,7 @@
         android:onClick="birdData"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:background="@drawable/btn_databirds"
+        android:background="@drawable/buttondata3d"
         android:layout_above="@+id/btnCollection"
         android:layout_alignLeft="@+id/btnSearchpossition"
         android:layout_alignStart="@+id/btnSearchpossition" />
@@ -55,7 +55,7 @@
         android:onClick="collection"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:background="@drawable/btn_collection"
+        android:background="@drawable/buttoncollectionimage3d"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/btnBirdData"
         android:layout_alignStart="@+id/btnBirdData"

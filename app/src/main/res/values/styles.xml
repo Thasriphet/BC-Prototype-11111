@@ -9,4 +9,6 @@
         <item name="android:background">@color/blue1</item>
         <item name="background">@color/blue1</item>
     </style>
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

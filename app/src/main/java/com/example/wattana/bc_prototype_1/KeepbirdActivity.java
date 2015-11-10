@@ -41,6 +41,12 @@ public class KeepbirdActivity extends AppCompatActivity {
 
         startActivity(itn);
     }
+
+    public  void home (View view){
+        Intent itnhome = new Intent(this,MainActivity.class);
+
+        startActivity(itnhome);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

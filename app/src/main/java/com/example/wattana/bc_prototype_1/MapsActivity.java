@@ -25,7 +25,7 @@ public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private Marker mMarker;
-
+    CollectionActivity collect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,15 +58,17 @@ public class MapsActivity extends FragmentActivity {
 
     private void setUpMap() {
 
+        mMap.addMarker(new MarkerOptions().position(new LatLng(16.458387, 102.809127))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1))
+                .title(getString(R.string.pramong)));
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(16.473986, 102.823689))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1)).title(""));
         mMap.addMarker(new MarkerOptions().position(new LatLng(16.444075, 102.813776))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1)).title("")); //บึงสี่ฐาน
-        /*mMap.addMarker(new MarkerOptions().position(new LatLng(16.444204, 102.814561))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdgreenicon_48)).title("")); //บึงสี่ฐาน 2*/
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1))
+                .title(getString(R.string.buengsrithan))); //บึงสี่ฐาน
+
         mMap.addMarker(new MarkerOptions().position(new LatLng(16.473204, 102.814097))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1)).title("")); //แปลงฝึกงาน คณะเกษตรศาสตร์
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1))
+                .title(getString(R.string.farm))); //แปลงฝึกงาน คณะเกษตรศาสตร์
         mMap.setMyLocationEnabled(true);
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -94,7 +96,7 @@ public class MapsActivity extends FragmentActivity {
         double longitude = myLocation.getLongitude();
 
         LatLng myCoordinates = new LatLng(latitude, longitude);
-        CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(myCoordinates, 15);
+        CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(myCoordinates, 14);
         mMap.animateCamera(yourLocation);
 
         // Create a LatLng object for the current location
@@ -108,8 +110,68 @@ public class MapsActivity extends FragmentActivity {
        /* mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("ตำแหน่งของคุณ"));*/
 
 
+        /*mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if (marker.getTitle().equals("BuengSethan")){
+                    collect.home();
+                }
+                return true;
+            }
+        });*/
+
+        //คลิกให้แสดง infowindow แล้วคลิก infowindow เพื่อไปหน้าแสดงนก ในตำแหน่ง marker นั้น
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+
+            public void onInfoWindowClick(Marker marker) {
+                if (marker.getTitle().equals(getString(R.string.buengsrithan))){
+                    Intent intent = new Intent(MapsActivity.this, BungSriTan_Birds.class);
+                    startActivity(intent);
+                }
+
+                if (marker.getTitle().equals(getString(R.string.pramong))){
+                    Intent intent = new Intent(MapsActivity.this, Mhudpramong.class);
+                    startActivity(intent);
+                }
+
+                if (marker.getTitle().equals(getString(R.string.farm))){
+                    Intent intent = new Intent(MapsActivity.this, FramimgArea_Birds.class);
+                    startActivity(intent);
+                }
+
+
+            }
+        });
+
+        //คลิก Marker รูปนก  เพื่อไปหน้าแสดงนก ในตำแหน่ง marker นั้น
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+
+                //นกบริเวณทุ่งหย้าเลี้ยงสัตว์ คณะเกษตรศาสตร์
+                if (marker.getTitle().equals(getString(R.string.farm))){
+                    Intent intent = new Intent(MapsActivity.this, FramimgArea_Birds.class);
+                    startActivity(intent);
+                }
+
+                //นกบริเวณ หมวดประมง
+                if (marker.getTitle().equals(getString(R.string.pramong))){
+                    Intent intent = new Intent(MapsActivity.this, Mhudpramong.class);
+                    startActivity(intent);
+                }
+
+                //นกบริเวญบึงสีฐาน
+                if (marker.getTitle().equals(getString(R.string.buengsrithan))){
+                    Intent intent = new Intent(MapsActivity.this, BungSriTan_Birds.class);
+                    startActivity(intent);
+                }
+                return false;
+            }
+        });
+
 
     }
+
 
 
 

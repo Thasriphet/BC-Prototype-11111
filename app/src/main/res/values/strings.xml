@@ -26,6 +26,12 @@
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_virtual_bird">VirtualBirdActivity</string>
     <string name="title_activity_photo">PhotoActivity</string>
+    <string name="buengsrithan">บึงสีฐาน</string>
+    <string name="pramong">บ่อน้ำหมวด หมวดประมง คณะเกษตรศาสตร์</string>
+    <string name="farm">ทุ่งหญ้าเลี้ยงสัตว์ คณะเกษตรศาสตร์</string>
+    <string name="title_activity_bung_sri_tan__birds">BungSriTan_Birds</string>
+    <string name="title_activity_mhudpramong">Mhudpramong</string>
+    <string name="title_activity_framimg_area__birds">FramimgArea_Birds</string>
 
 
 </resources>

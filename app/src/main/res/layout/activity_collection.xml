@@ -15,11 +15,11 @@
 
         android:textStyle="bold"
         android:textSize="25sp"
-        android:layout_above="@+id/btnVirtualbird"
+        android:background="@drawable/buttonvirtualbird_img3d"
+        android:onClick="virtualbird"
+        android:layout_below="@+id/btnVirtualbird"
         android:layout_alignLeft="@+id/btnVirtualbird"
-        android:layout_alignStart="@+id/btnVirtualbird"
-        android:background="@drawable/btn_virtualbird"
-        android:onClick="virtualbird" />
+        android:layout_alignStart="@+id/btnVirtualbird" />
 
     <Button
         android:layout_width="220dp"
@@ -28,10 +28,11 @@
         android:id="@+id/btnVirtualbird"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:layout_centerVertical="true"
+        android:background="@drawable/buttonphoto3d"
+        android:onClick="photobird"
+        android:layout_below="@+id/imageView2"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/btn_photo"
-        android:onClick="photobird" />
+        android:layout_marginTop="82dp" />
 
     <ImageView
         android:layout_width="220dp"
@@ -43,41 +44,53 @@
         android:layout_alignStart="@+id/btnPhoto" />
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="80dp"
+        android:layout_width="265dp"
+        android:layout_height="70dp"
         android:layout_gravity="bottom"
         android:paddingLeft="10dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/layout_front1">
 
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text=""
+            android:id="@+id/btn_iconhome"
+            android:background="@drawable/buttonhome"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:onClick="home" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:text=""
             android:id="@+id/btn_iconkeep"
-            android:background="@drawable/cycle500"
+            android:background="@drawable/buttonkeep"
             android:onClick="keepbird"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"/>
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/btn_iconpos"
-            android:background="@drawable/cyclemap"
+            android:background="@drawable/buttonmap"
             android:onClick="openposition"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
              />
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/btn_icondata"
-            android:background="@drawable/cycledata"
+            android:background="@drawable/buttondata"
             android:paddingLeft="5dp"
             android:onClick="birddata"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"/>
     </LinearLayout>
 
 </RelativeLayout>

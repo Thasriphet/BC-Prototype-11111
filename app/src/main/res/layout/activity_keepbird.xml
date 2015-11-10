@@ -14,7 +14,7 @@
         android:id="@+id/btnTakePhoto"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:background="@drawable/btn_takephoto"
+        android:background="@drawable/buttontakephoto3d"
         android:layout_above="@+id/btnKeepvirtualBird"
         android:layout_centerHorizontal="true" />
 
@@ -25,7 +25,7 @@
         android:id="@+id/btnKeepvirtualBird"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:background="@drawable/btn_keepvirtualbird"
+        android:background="@drawable/buttonkeepvirtaul3d"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/btnTakePhoto"
         android:layout_alignStart="@+id/btnTakePhoto" />
@@ -40,38 +40,50 @@
         android:contentDescription="keepbanner" />
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="80dp"
-        android:layout_marginBottom="2dp"
+        android:layout_width="265dp"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        android:paddingLeft="10dp"
         android:layout_alignParentBottom="true"
-        android:paddingLeft="10dp">
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/layout_front1">
 
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text=""
+            android:id="@+id/btn_iconhome"
+            android:background="@drawable/buttonhome"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:onClick="home" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:text=""
             android:id="@+id/btn_iconkeep"
-            android:background="@drawable/cyclemap"
-            android:layout_marginLeft="20dp"
+            android:background="@drawable/buttonmap"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:onClick="openposition" />
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/btn_iconpos"
-            android:background="@drawable/cycledata"
-            android:layout_marginLeft="20dp"
-            android:nestedScrollingEnabled="false"
+            android:background="@drawable/buttondata"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:onClick="birddata" />
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/btn_icondata"
-            android:background="@drawable/cyclebag"
-            android:paddingLeft="5dp"
-            android:layout_marginLeft="20dp"
+            android:background="@drawable/buttonbag"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
             android:onClick="birdcollection" />
     </LinearLayout>
 </RelativeLayout>

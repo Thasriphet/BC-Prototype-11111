@@ -53,6 +53,11 @@ public class CollectionActivity extends AppCompatActivity {
 
         startActivity(itnb);
     }
+    public  void home (View view){
+        Intent itnhome = new Intent(this,MainActivity.class);
+
+        startActivity(itnhome);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -79,4 +84,6 @@ public class CollectionActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

@@ -1,8 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
-    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_height="fill_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
     android:paddingBottom="0dp"
     tools:context="com.example.wattana.bc_prototype_1.BirdsDataActivity"
     android:background="@drawable/bg_ui00">
@@ -17,80 +18,54 @@
         android:contentDescription="" />
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="80dp"
-        android:layout_marginBottom="2dp"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:paddingLeft="0dp"
         android:layout_alignParentBottom="true"
-        android:paddingLeft="10dp">
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/layout_front1"
+        android:id="@+id/linearLayout">
 
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text=""
+            android:id="@+id/btn_iconhome"
+            android:background="@drawable/buttonhome"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:onClick="home"
+            android:nestedScrollingEnabled="false" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:text=""
             android:id="@+id/btn_iconkeep"
-            android:background="@drawable/cycle500"
-            android:layout_marginLeft="20dp"
+            android:background="@drawable/buttonkeep"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:onClick="keepbird" />
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/btn_iconpos"
-            android:background="@drawable/cyclemap"
-            android:layout_marginLeft="20dp"
+            android:background="@drawable/buttonmap"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:onClick="openposition" />
 
         <Button
-            android:layout_width="80dp"
-            android:layout_height="77dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/btn_icondata"
-            android:background="@drawable/cyclebag"
-            android:paddingLeft="5dp"
-            android:layout_marginLeft="20dp"
+            android:background="@drawable/buttonbag"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:onClick="birdcollection" />
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="77dp"
-        android:id="@+id/img_a"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
-        android:background="@drawable/cyclebird"
-        android:clickable="true"
-        android:onClick="gotobird" />
-
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/img_b"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="120dp"
-        android:background="@drawable/cyclebird"
-        android:clickable="true"
-        android:onClick="gotobird" />
-
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="77dp"
-        android:id="@+id/img_c"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="210dp"
-        android:background="@drawable/cyclebird"
-        android:clickable="true"
-        android:onClick="gotobird" />
-
-
 
 
 </RelativeLayout>
