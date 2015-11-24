@@ -125,17 +125,17 @@ public class MapsActivity extends FragmentActivity {
 
             public void onInfoWindowClick(Marker marker) {
                 if (marker.getTitle().equals(getString(R.string.buengsrithan))){
-                    Intent intent = new Intent(MapsActivity.this, BungSriTan_Birds.class);
+                    Intent intent = new Intent(MapsActivity.this, Sitanbirds.class);
                     startActivity(intent);
                 }
 
                 if (marker.getTitle().equals(getString(R.string.pramong))){
-                    Intent intent = new Intent(MapsActivity.this, Mhudpramong.class);
+                    Intent intent = new Intent(MapsActivity.this, MhudPramongBirds.class);
                     startActivity(intent);
                 }
 
                 if (marker.getTitle().equals(getString(R.string.farm))){
-                    Intent intent = new Intent(MapsActivity.this, FramimgArea_Birds.class);
+                    Intent intent = new Intent(MapsActivity.this, KasetFarm.class);
                     startActivity(intent);
                 }
 
@@ -150,19 +150,19 @@ public class MapsActivity extends FragmentActivity {
 
                 //นกบริเวณทุ่งหย้าเลี้ยงสัตว์ คณะเกษตรศาสตร์
                 if (marker.getTitle().equals(getString(R.string.farm))){
-                    Intent intent = new Intent(MapsActivity.this, FramimgArea_Birds.class);
+                    Intent intent = new Intent(MapsActivity.this, KasetFarm.class);
                     startActivity(intent);
                 }
 
                 //นกบริเวณ หมวดประมง
                 if (marker.getTitle().equals(getString(R.string.pramong))){
-                    Intent intent = new Intent(MapsActivity.this, Mhudpramong.class);
+                    Intent intent = new Intent(MapsActivity.this, MhudPramongBirds.class);
                     startActivity(intent);
                 }
 
                 //นกบริเวญบึงสีฐาน
                 if (marker.getTitle().equals(getString(R.string.buengsrithan))){
-                    Intent intent = new Intent(MapsActivity.this, BungSriTan_Birds.class);
+                    Intent intent = new Intent(MapsActivity.this, Sitanbirds.class);
                     startActivity(intent);
                 }
                 return false;

@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:background="#fd0707" />
+        android:background="#d5eaf9" />
 
     <TextView
         android:id="@+id/textView1"

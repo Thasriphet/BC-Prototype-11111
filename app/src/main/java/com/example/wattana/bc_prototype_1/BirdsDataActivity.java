@@ -1,5 +1,6 @@
 package com.example.wattana.bc_prototype_1;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,8 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -22,6 +25,20 @@ import android.widget.Toast;
 public class BirdsDataActivity extends AppCompatActivity {
     //List <String> ImageList;
     String arrData[][];
+    TextView txtName,txtDesc,txtLocl;
+    ImageView imgView_Bird;
+    Integer picBird [] = {R.mipmap.bird01,
+            R.mipmap.bird02,
+            R.mipmap.bird03,
+            R.mipmap.bird04,
+            R.mipmap.bird05,
+            R.mipmap.bird06,
+            R.mipmap.bird07,
+            R.mipmap.bird08,
+            R.mipmap.bird09,
+            R.mipmap.bird10,
+            R.mipmap.bird11,
+            R.mipmap.bird12};
 
 
 
@@ -34,7 +51,7 @@ public class BirdsDataActivity extends AppCompatActivity {
 
         final Birddatabase BirdDb = new Birddatabase(this);
 
-       /* BirdDb.InsertData("1", "เหยี่ยวขาว", "เป็นกลุ่มนกที่ล่าสัตว์เป็นอาหาร ตาสีแดง ลำตัวสีเทา " +
+/*       BirdDb.InsertData("1", "เหยี่ยวขาว", "เป็นกลุ่มนกที่ล่าสัตว์เป็นอาหาร ตาสีแดง ลำตัวสีเทา " +
                         "ลำตัวด้านล่างเป็นสีขาว ปลายปีกมีสีดำเข้มตัดกับลำตัว พบเห็นได้ตลอดปี โดยบพครั้งละตัวไม่รวมฝูง",
                 "ทุ่งหญ้าเลี้ยงสัตว์คณะเกษตรศาสตร์ ", "bird01.png");
         BirdDb.InsertData("2","นกเด้าดินทุ่ง ", "ลำตัวสีน้ำตาล มีริ้วสีดำที่หน้าอก ใต้คอมีสีขาว คิ้วสีขาว ขาสีชมพู " +
@@ -79,10 +96,14 @@ public class BirdsDataActivity extends AppCompatActivity {
 
 
         arrData = BirdDb.SelectAllData();
+
         /***
-         *  [x][0] = GalleryID
+         *  [x][0] = BirdID
          *  [x][1] = Name
-         *  [x][2] = Path
+         *  [x][2] = Description
+         *  [x][3] = Location
+         *  [x][4] = Path
+         *
          */
 
         // gridView1
@@ -95,8 +116,32 @@ public class BirdsDataActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
-                Toast.makeText(getApplicationContext(),
-                        "Your selected : " + arrData[position][1].toString(), Toast.LENGTH_SHORT).show();
+                final Dialog dialog_ShowBird = new Dialog(BirdsDataActivity.this);
+                dialog_ShowBird.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog_ShowBird.setContentView(R.layout.show_bird);
+                dialog_ShowBird.setCancelable(true);
+                dialog_ShowBird.show();
+
+                Button btnClose = (Button)dialog_ShowBird.findViewById(R.id.btnClose);
+                txtName = (TextView)dialog_ShowBird.findViewById(R.id.txtName);
+                txtDesc = (TextView)dialog_ShowBird.findViewById(R.id.txtDesc);
+                txtLocl = (TextView)dialog_ShowBird.findViewById(R.id.txtLocal);
+                imgView_Bird = (ImageView)dialog_ShowBird.findViewById(R.id.imaViewBird);
+
+                txtName.setText(""+arrData[position][1].toString());
+                txtDesc.setText(""+arrData[position][2].toString());
+                txtLocl.setText(""+arrData[position][3].toString());
+
+                imgView_Bird.setImageResource(picBird[position]);
+
+                btnClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog_ShowBird.dismiss();
+                    }
+                });
+                /*Toast.makeText(getApplicationContext(),
+                        "Your selected : " + arrData[position][1].toString(), Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -141,14 +186,21 @@ public class BirdsDataActivity extends AppCompatActivity {
             }
 
             TextView textView = (TextView) convertView.findViewById(R.id.textView1);
-            String strPath = "/mnt/sdcard/picture/" + lis[position][2].toString();
+            //String strPath = "Phone/birds00/"+lis[position][4].toString();
 
-            textView.setText(lis[position][1].toString());
+
+
+                    textView.setText(lis[position][1].toString());
 
             // Image Resource
+
+
             ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView1);
-            Bitmap bm = BitmapFactory.decodeFile(strPath);
-            imageView.setImageBitmap(bm);
+            imageView.setImageResource(picBird[position]);
+
+
+            //Bitmap bm = BitmapFactory.decodeFile(strPath);
+            //imageView.setImageBitmap(bm);
 
 
             return convertView;

@@ -17,10 +17,10 @@ public class Birddatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "mydatabase.db";
+    private static final String DATABASE_NAME = "kkubirds.db";
 
     // Table Name
-    private static final String TABLE_BIRD = "BirdData";
+    private static final String TABLE_BIRD_info = "BirdInfomation";
 
 
 
@@ -30,7 +30,7 @@ public class Birddatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_BIRD +
+        db.execSQL("CREATE TABLE " + TABLE_BIRD_info +
                 "(BirdID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " Name TEXT(100)," +
                 " Description TEXT(100),"+
@@ -57,7 +57,7 @@ public class Birddatabase extends SQLiteOpenHelper {
             Val.put("Location", strLocation);
             Val.put("Path", strPath);
 
-            long rows = db.insert(TABLE_BIRD, null, Val);
+            long rows = db.insert(TABLE_BIRD_info, null, Val);
 
             db.close();
             return rows; // return rows inserted.
@@ -77,8 +77,10 @@ public class Birddatabase extends SQLiteOpenHelper {
             SQLiteDatabase db;
             db = this.getReadableDatabase(); // Read Data
 
-            String strSQL = "SELECT  * FROM " + TABLE_BIRD;
+            String strSQL = "SELECT  * FROM " + TABLE_BIRD_info;
             Cursor cursor = db.rawQuery(strSQL, null);
+
+
 
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
@@ -93,12 +95,18 @@ public class Birddatabase extends SQLiteOpenHelper {
                         arrData[i][0] = cursor.getString(0);
                         arrData[i][1] = cursor.getString(1);
                         arrData[i][2] = cursor.getString(2);
+                        arrData[i][3] = cursor.getString(3);
+                        arrData[i][4] = cursor.getString(4);
+                        Log.i("TAG",arrData[i][2]);
+
+                        //Log.e("TAG", arrData[i][1]);
                         i++;
                     } while (cursor.moveToNext());
 
                 }
             }
             cursor.close();
+
 
             return arrData;
 
@@ -116,7 +124,7 @@ public class Birddatabase extends SQLiteOpenHelper {
             SQLiteDatabase db;
             db = this.getReadableDatabase(); // Read Data
 
-            String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'บึงสีฐาน ';";
+            String strSQL = "SELECT  * FROM " + TABLE_BIRD_info + " WHERE Location = 'บึงสีฐาน ';";
             //String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'บ่อน้ำประมง ';";
            //String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'ทุ่งหญ้าเลี้ยงสัตว์คณะเกษตรศาสตร์ ';";
 
@@ -136,6 +144,8 @@ public class Birddatabase extends SQLiteOpenHelper {
                         arrData[i][0] = cursor.getString(0);
                         arrData[i][1] = cursor.getString(1);
                         arrData[i][2] = cursor.getString(2);
+                        arrData[i][3] = cursor.getString(3);
+                        arrData[i][4] = cursor.getString(4);
                         i++;
                     } while (cursor.moveToNext());
 
@@ -161,7 +171,7 @@ public class Birddatabase extends SQLiteOpenHelper {
             db = this.getReadableDatabase(); // Read Data
 
             //String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'บึงสีฐาน ';";
-            String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'บ่อน้ำประมง ';";
+            String strSQL = "SELECT  * FROM " + TABLE_BIRD_info + " WHERE Location = 'บ่อน้ำประมง ';";
             //String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'ทุ่งหญ้าเลี้ยงสัตว์คณะเกษตรศาสตร์ ';";
 
             Cursor cursor = db.rawQuery(strSQL, null);
@@ -180,6 +190,8 @@ public class Birddatabase extends SQLiteOpenHelper {
                         arrData[i][0] = cursor.getString(0);
                         arrData[i][1] = cursor.getString(1);
                         arrData[i][2] = cursor.getString(2);
+                        arrData[i][3] = cursor.getString(3);
+                        arrData[i][4] = cursor.getString(4);
                         i++;
                     } while (cursor.moveToNext());
 
@@ -205,7 +217,7 @@ public class Birddatabase extends SQLiteOpenHelper {
 
             //String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'บึงสีฐาน ';";
             //String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'บ่อน้ำประมง ';";
-            String strSQL = "SELECT  * FROM " + TABLE_BIRD + " WHERE Location = 'ทุ่งหญ้าเลี้ยงสัตว์คณะเกษตรศาสตร์ ';";
+            String strSQL = "SELECT  * FROM " + TABLE_BIRD_info + " WHERE Location = 'ทุ่งหญ้าเลี้ยงสัตว์คณะเกษตรศาสตร์ ';";
 
             Cursor cursor = db.rawQuery(strSQL, null);
 
@@ -223,6 +235,8 @@ public class Birddatabase extends SQLiteOpenHelper {
                         arrData[i][0] = cursor.getString(0);
                         arrData[i][1] = cursor.getString(1);
                         arrData[i][2] = cursor.getString(2);
+                        arrData[i][3] = cursor.getString(3);
+                        arrData[i][4] = cursor.getString(4);
                         i++;
                     } while (cursor.moveToNext());
 
@@ -241,7 +255,7 @@ public class Birddatabase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_BIRD);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_BIRD_info);
 
         // Re Create on method  onCreate
         onCreate(db);

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/oldpaper">
+
+
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:id="@+id/imaViewBird"
+        android:src="@mipmap/bird01"
+        android:layout_alignTop="@+id/txtName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TableLayout
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imaViewBird"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="คำอธิบาย : "
+                android:id="@+id/textView3"
+                android:layout_column="0"
+                android:layout_marginLeft="5dp"
+                android:textColor="#040404" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/txtDesc"
+                android:layout_column="1"
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#050505" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ตำแหน่ง : "
+                android:id="@+id/textView5"
+                android:layout_column="0"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#050505" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/txtLocal"
+                android:layout_column="1"
+                android:textSize="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="#050505" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/txtName"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textSize="30dp"
+        android:gravity="center|center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:textColor="#f4891e" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="ปิด"
+        android:id="@+id/btnClose"
+        android:background="#eb9a3d"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>
