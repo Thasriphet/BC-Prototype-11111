@@ -22,6 +22,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class MapsActivity extends FragmentActivity {
+    double mlatitude = 0;
+    double mlongitude = 0;
+    boolean onlocation = true;
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private Marker mMarker;
@@ -32,6 +35,7 @@ public class MapsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
+        mMap.setOnMyLocationChangeListener(myLocationChangeListener);
     }
 
     @Override
@@ -54,7 +58,21 @@ public class MapsActivity extends FragmentActivity {
             }
         }
     }
+    private GoogleMap.OnMyLocationChangeListener myLocationChangeListener = new GoogleMap.OnMyLocationChangeListener() {
+        @Override
+        public void onMyLocationChange(Location location) {
+            LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
+            mlatitude = location.getLatitude();
+            mlongitude = location.getLongitude();
+            if (mMap != null) {
+                if (mlatitude !=0 && mlongitude!=0 && onlocation){
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 12.0f));
+                    onlocation = false;
+                }
 
+            }
+        }
+    };
 
     private void setUpMap() {
 
@@ -64,29 +82,19 @@ public class MapsActivity extends FragmentActivity {
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(16.444075, 102.813776))
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1))
-                .title(getString(R.string.buengsrithan))); //บึงสี่ฐาน
+                .title(getString(R.string.buengsrithan))); //ºÖ§ÊÕè°Ò¹
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(16.473204, 102.814097))
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.birdposition_1))
-                .title(getString(R.string.farm))); //แปลงฝึกงาน คณะเกษตรศาสตร์
+                .title(getString(R.string.farm))); //á»Å§½Ö¡§Ò¹ ¤³Ðà¡ÉµÃÈÒÊµÃì
         mMap.setMyLocationEnabled(true);
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-        Criteria criteria = new Criteria();
+       /* Criteria criteria = new Criteria();
 
         String provider = locationManager.getBestProvider(criteria, true);
-//        if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-//                && checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    public void requestPermissions(@NonNull String[] permissions, int requestCode)
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for Activity#requestPermissions for more details.
-//            return;
-//        }
+//
         Location myLocation = locationManager.getLastKnownLocation(provider);
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -97,7 +105,7 @@ public class MapsActivity extends FragmentActivity {
 
         LatLng myCoordinates = new LatLng(latitude, longitude);
         CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(myCoordinates, 14);
-        mMap.animateCamera(yourLocation);
+        mMap.animateCamera(yourLocation);*/
 
         // Create a LatLng object for the current location
         /*LatLng latLng = new LatLng(latitude, longitude);
@@ -107,7 +115,7 @@ public class MapsActivity extends FragmentActivity {
 
         // Zoom in the Google Map
         mMap.animateCamera(CameraUpdateFactory.zoomTo(18));*/
-       /* mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("ตำแหน่งของคุณ"));*/
+       /* mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("µÓáË¹è§¢Í§¤Ø³"));*/
 
 
         /*mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -120,7 +128,7 @@ public class MapsActivity extends FragmentActivity {
             }
         });*/
 
-        //คลิกให้แสดง infowindow แล้วคลิก infowindow เพื่อไปหน้าแสดงนก ในตำแหน่ง marker นั้น
+        //¤ÅÔ¡ãËéáÊ´§ infowindow áÅéÇ¤ÅÔ¡ infowindow à¾×èÍä»Ë¹éÒáÊ´§¹¡ ã¹µÓáË¹è§ marker ¹Ñé¹
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
 
             public void onInfoWindowClick(Marker marker) {
@@ -143,24 +151,24 @@ public class MapsActivity extends FragmentActivity {
             }
         });
 
-        //คลิก Marker รูปนก  เพื่อไปหน้าแสดงนก ในตำแหน่ง marker นั้น
+        //¤ÅÔ¡ Marker ÃÙ»¹¡  à¾×èÍä»Ë¹éÒáÊ´§¹¡ ã¹µÓáË¹è§ marker ¹Ñé¹
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
 
-                //นกบริเวณทุ่งหย้าเลี้ยงสัตว์ คณะเกษตรศาสตร์
+                //¹¡ºÃÔàÇ³·Øè§ËÂéÒàÅÕéÂ§ÊÑµÇì ¤³Ðà¡ÉµÃÈÒÊµÃì
                 if (marker.getTitle().equals(getString(R.string.farm))){
                     Intent intent = new Intent(MapsActivity.this, KasetFarm.class);
                     startActivity(intent);
                 }
 
-                //นกบริเวณ หมวดประมง
+                //¹¡ºÃÔàÇ³ ËÁÇ´»ÃÐÁ§
                 if (marker.getTitle().equals(getString(R.string.pramong))){
                     Intent intent = new Intent(MapsActivity.this, MhudPramongBirds.class);
                     startActivity(intent);
                 }
 
-                //นกบริเวญบึงสีฐาน
+                //¹¡ºÃÔàÇ­ºÖ§ÊÕ°Ò¹
                 if (marker.getTitle().equals(getString(R.string.buengsrithan))){
                     Intent intent = new Intent(MapsActivity.this, Sitanbirds.class);
                     startActivity(intent);

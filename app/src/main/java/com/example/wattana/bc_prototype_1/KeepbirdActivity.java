@@ -47,6 +47,12 @@ public class KeepbirdActivity extends AppCompatActivity {
 
         startActivity(itnhome);
     }
+
+    public  void realcam (View view){
+        Intent itnrcam = new Intent(this,Realcam_Bird.class);
+
+        startActivity(itnrcam);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

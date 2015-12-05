@@ -16,7 +16,8 @@
         android:textSize="25sp"
         android:background="@drawable/buttontakephoto3d"
         android:layout_above="@+id/btnKeepvirtualBird"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="realcam" />
 
     <Button
         android:layout_width="220dp"

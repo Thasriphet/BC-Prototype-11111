@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wattana.bc_prototype_1" >
+    package="com.example.wattana.bc_prototype_1">
 
     <permission
         android:name="package.name.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <uses-feature android:name="package.name.permission.MAPS_RECEIVE" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -29,10 +32,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_newname"
-        android:theme="@style/Theme.AppCompat.NoActionBar" >
+        android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_newname" >
+            android:label="@string/app_newname">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,7 +46,7 @@
         <activity
             android:name=".KeepbirdActivity"
             android:label="@string/title_activity_keepbird"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.wattana.bc_prototype_1.MainActivity" />
@@ -51,19 +54,17 @@
         <activity
             android:name=".BirdsDataActivity"
             android:label="@string/title_activity_birds_data"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.wattana.bc_prototype_1.MainActivity" />
         </activity>
         <activity
             android:name=".CollectionActivity"
-            android:label="@string/title_activity_collection" >
-        </activity>
+            android:label="@string/title_activity_collection"></activity>
         <activity
             android:name=".BirdMapActitvity"
-            android:label="@string/title_activity_bird_map_actitvity" >
-        </activity>
+            android:label="@string/title_activity_bird_map_actitvity"></activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -74,8 +75,7 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" >
-        </activity>
+            android:label="@string/title_activity_maps"></activity>
         <!-- <activity -->
         <!-- android:name=".Collections" -->
         <!-- android:label="@string/title_activity_collections" -->
@@ -98,22 +98,24 @@
         <!-- </activity> -->
         <activity
             android:name=".DetailActivity"
-            android:label="@string/title_activity_detail" >
-        </activity>
+            android:label="@string/title_activity_detail"></activity>
         <activity
             android:name=".VirtualBirdActivity"
-            android:label="@string/title_activity_virtual_bird" >
-        </activity>
+            android:label="@string/title_activity_virtual_bird"></activity>
         <activity
             android:name=".PhotoActivity"
-            android:label="@string/title_activity_photo" >
-        </activity>
-        <activity android:name=".Sitanbirds" >
-        </activity>
-        <activity android:name=".KasetFarm" >
-        </activity>
-        <activity android:name=".MhudPramongBirds" >
-        </activity>
+            android:label="@string/title_activity_photo"></activity>
+        <activity android:name=".Sitanbirds"></activity>
+        <activity android:name=".KasetFarm"></activity>
+        <activity android:name=".MhudPramongBirds"></activity>
+        <activity android:name=".Realcam_Bird"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>></activity>
     </application>
 
 </manifest>
